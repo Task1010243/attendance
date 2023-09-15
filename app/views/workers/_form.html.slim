@@ -1,13 +1,13 @@
 = form_with model: worker do |form|
  div
-  = form.label :name
+  = form.label '名前'
   = form.text_field :name
   - worker.errors.full_messages_for(:name).each do |message|
     div
      = message
 
  div
-  = form.label :hire_date
+  = form.label '雇入れ日時'
   = form.text_field :hire_date
   - worker.errors.full_messages_for(:hire_date).each do |message|
     div
