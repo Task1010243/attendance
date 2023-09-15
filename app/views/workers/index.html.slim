@@ -2,5 +2,6 @@ h1 社員一覧
 
 ul
  - @workers.each do |worker|
-  li = worker.name
-  li = worker.hire_date
+  li
+   a href="/workers/#{worker.id}"
+    = worker.name
