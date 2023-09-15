@@ -4,3 +4,5 @@ ul
  - @workers.each do |worker|
   li
    = link_to "#{worker.name}", worker_path(worker)
+
+= link_to "従業員登録", new_worker_path
