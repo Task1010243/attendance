@@ -1,2 +1,6 @@
-h1 Workers#index
-p Find me in app/views/workers/index.html.slim
+h1 社員一覧
+
+ul
+ - @workers.each do |worker|
+  li = worker.name
+  li = worker.hire_date
