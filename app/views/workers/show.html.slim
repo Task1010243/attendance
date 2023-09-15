@@ -4,4 +4,6 @@ p = @worker.hire_date
 
 ul
  li
-  = link_to "Edit", edit_worker_path(@worker)
+  = link_to "編集", edit_worker_path(@worker)
+ li
+  = link_to "削除", worker_path(@worker), data:{ turbo_method: :delete, turbo_confirm: "削除してもよろしいでしょうか？"}

@@ -26,13 +26,20 @@ class WorkersController < ApplicationController
   end
 
   def update
-    @worker = Worker.find(params[id])
+    @worker = Worker.find(params[:id])
 
     if @worker.update(worker_params)
       redirect_to @worker
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @worker = Worker.find(params[:id])
+    @worker.destroy
+
+    redirect_to root_path, status: :see_other
   end
 
   private
