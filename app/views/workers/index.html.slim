@@ -3,5 +3,4 @@ h1 社員一覧
 ul
  - @workers.each do |worker|
   li
-   a href="/workers/#{worker.id}"
-    = worker.name
+   = link_to "#{worker.name}", worker_path(worker)
