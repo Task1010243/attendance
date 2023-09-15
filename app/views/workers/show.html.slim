@@ -7,3 +7,5 @@ ul
   = link_to "編集", edit_worker_path(@worker)
  li
   = link_to "削除", worker_path(@worker), data:{ turbo_method: :delete, turbo_confirm: "削除してもよろしいでしょうか？"}
+
+= link_to "一覧へ戻る", root_path
