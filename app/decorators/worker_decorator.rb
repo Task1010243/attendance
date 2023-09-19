@@ -1,4 +1,4 @@
-module WorkerDecorator < Draper::Decorator
+class WorkerDecorator < Draper::Decorator
   delegate_all
 
   def age
@@ -10,5 +10,9 @@ module WorkerDecorator < Draper::Decorator
     end
 
     age
+  end
+
+  def all_pto
+    pre_pto.to_f + pto.to_f
   end
 end

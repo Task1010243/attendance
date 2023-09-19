@@ -1,6 +1,22 @@
 h1 労働者詳細
-p = @worker.name
-p = @worker.hire_date
+
+table
+  thead
+    tr
+      td 名前
+      td 雇入れ日時
+      td 年齢
+      td 有給残日数
+      td 昨年度有休残日数
+      td 今年度有休付与日数
+    tbody
+      tr
+        td = @worker.name
+        td = @worker.hire_date.strftime("%Y年%m月%d日")
+        td = @worker.age
+        td = @worker.all_pto
+        td = @worker.pre_pto
+        td = @worker.pto
 
 ul
  li

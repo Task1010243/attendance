@@ -4,7 +4,7 @@ class WorkersController < ApplicationController
   end
 
   def show
-    @worker = Worker.find(params[:id])
+    @worker = Worker.find(params[:id]).decorate
   end
 
   def new
