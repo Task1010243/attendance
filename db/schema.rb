@@ -10,12 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_15_080734) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_19_060427) do
   create_table "workers", force: :cascade do |t|
     t.string "name"
     t.datetime "hire_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "birth_day"
+    t.float "pre_pto"
+    t.float "pto"
+    t.float "rest_time_pto"
   end
 
 end
