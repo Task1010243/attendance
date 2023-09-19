@@ -44,6 +44,6 @@ class WorkersController < ApplicationController
 
   private
     def worker_params
-      params.require(:worker).permit(:name, :hire_date)
+      params.require(:worker).permit(:name, :hire_date, :birth_day, :pre_pto, :pto)
     end
 end

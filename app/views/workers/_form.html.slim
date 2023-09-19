@@ -12,5 +12,27 @@
   - worker.errors.full_messages_for(:hire_date).each do |message|
     div
      = message
+
+ div
+  = form.label '誕生日'
+  = form.date_field :birth_day
+  - worker.errors.full_messages_for(:birth_day).each do |message|
+    div
+     = message
+
+ div
+  = form.label '昨年度有休残日数'
+  = form.text_field :pre_pto
+  - worker.errors.full_messages_for(:pre_pto).each do |message|
+    div
+     = message
+
+ div
+  = form.label '今年度有休残日数'
+  = form.text_field :pto
+  - worker.errors.full_messages_for(:pto).each do |message|
+    div
+     = message
+
  div
   = form.submit
