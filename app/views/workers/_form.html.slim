@@ -8,7 +8,7 @@
 
  div
   = form.label '雇入れ日時'
-  = form.text_field :hire_date
+  = form.date_field :hire_date
   - worker.errors.full_messages_for(:hire_date).each do |message|
     div
      = message
