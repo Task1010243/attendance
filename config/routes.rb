@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "workers#index"
 
   resources :workers
+  resources :paid_holidays
 end
