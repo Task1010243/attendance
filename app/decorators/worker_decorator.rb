@@ -15,4 +15,15 @@ class WorkerDecorator < Draper::Decorator
   def all_pto
     pre_pto.to_f + pto.to_f
   end
+
+  def seniority
+    today = Time.zone.today
+    this_years_hire = Time.zone.local(today.year, hire_date.month, hire_date.day)
+    seniority = today.year - hire_date.year
+    if today < this_years_hire
+      seniority -= 1
+    end
+
+    seniority
+  end
 end
