@@ -1,22 +1,18 @@
 h1 労働者詳細
 
 table
-  thead
-    tr
-      td 名前
-      td 雇入れ日時
-      td 年齢
-      td 有給残日数
-      td 昨年度有休残日数
-      td 今年度有休付与日数
-    tbody
-      tr
-        td = @worker.name
-        td = @worker.hire_date.strftime("%Y年%m月%d日")
-        td = @worker.age
-        td = @worker.all_pto
-        td = @worker.pre_pto
-        td = @worker.pto
+  tr
+    th 名前
+    th 有給残日数
+    th 昨年度有休残日数
+    th 今年度有休付与日数
+    th 雇入れ日時
+  tr
+    td = @worker.name + '(' + @worker.age.to_s + '歳)'
+    td = @worker.all_pto.to_s + '日'
+    td = @worker.pre_pto.to_s + '日'
+    td = @worker.pto.to_s + '日'
+    td = @worker.hire_date.strftime("%Y年%m月%d日")
 
 ul
  li
