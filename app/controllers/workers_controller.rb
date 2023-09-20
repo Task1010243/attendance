@@ -1,6 +1,6 @@
 class WorkersController < ApplicationController
   def index
-    @workers = Worker.all
+    @workers = Worker.all.decorate
   end
 
   def show
