@@ -1,5 +1,6 @@
 class PaidHoliday < ApplicationRecord
-  validates :used_worker, presence: true
+  belongs_to :worker, foreign_key: :used_worker_id
+  validates :used_worker_id, presence: true
   validates :first_period, presence: true
   validates :end_period, presence: true
   validates :type, presence: true

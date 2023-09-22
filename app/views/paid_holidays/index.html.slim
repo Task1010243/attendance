@@ -1,1 +1,24 @@
 h1 休暇一覧
+
+= link_to '休暇登録', new_worker_paid_holiday_path
+
+br
+
+= @worker.name
+
+table
+  tr
+    th 開始日
+    th 終了日
+    th 種別
+    th 代勤者１
+    th 代勤者２
+  - @paid_holidays.each do |paid_holiday|
+    tr
+      td = paid_holiday.first_period
+      td = paid_holiday.end_period
+      td = paid_holiday.type
+      td = paid_holiday.substitute_worker1
+      td = paid_holiday.substitute_worker2
+
+= link_to '従業員一覧へ', workers_path
