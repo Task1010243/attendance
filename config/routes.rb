@@ -4,5 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "workers#index"
 
-  resources :workers
+  resources :workers do
+    resources :paid_holidays
+  end
+  resources :paid_holidays do
+    collection do
+      get :current_month_index
+    end
+  end
 end

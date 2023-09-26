@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_19_060427) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_20_054324) do
+  create_table "paid_holidays", force: :cascade do |t|
+    t.integer "used_worker_id"
+    t.datetime "first_period"
+    t.datetime "end_period"
+    t.string "type"
+    t.string "substitute_worker1"
+    t.string "substitute_worker2"
+    t.float "used_days"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["used_worker_id"], name: "index_paid_holidays_on_used_worker_id"
+  end
+
   create_table "workers", force: :cascade do |t|
     t.string "name"
     t.datetime "hire_date"
@@ -22,4 +35,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_19_060427) do
     t.float "rest_time_pto"
   end
 
+  add_foreign_key "paid_holidays", "workers", column: "used_worker_id"
 end

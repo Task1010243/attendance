@@ -1,0 +1,7 @@
+h1 休暇登録
+
+h3 休暇者
+= @worker.name
+= render "form", paid_holiday: @paid_holiday
+
+= link_to "従業員詳細へ戻る", worker_path(@worker.id)
