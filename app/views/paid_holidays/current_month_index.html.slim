@@ -12,7 +12,7 @@ table
     th 代勤者２
   - @current_month_paid_holidays.each do |paid_holiday|
     tr
-      td = @worker[paid_holiday.id - 1][1]
+      td = @worker[paid_holiday.used_worker_id - 1][1]
       td = paid_holiday.first_period.strftime("%Y/%m/%d %H:%M")
       td = paid_holiday.end_period.strftime("%Y/%m/%d %H:%M")
       td = paid_holiday.type
