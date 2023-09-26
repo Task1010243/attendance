@@ -15,8 +15,8 @@ table
     th 代勤者２
   - @paid_holidays.each do |paid_holiday|
     tr
-      td = paid_holiday.first_period
-      td = paid_holiday.end_period
+      td = paid_holiday.first_period.strftime("%Y/%m/%d %H:%M")
+      td = paid_holiday.end_period.strftime("%Y/%m/%d %H:%M")
       td = paid_holiday.type
       td = paid_holiday.substitute_worker1
       td = paid_holiday.substitute_worker2
