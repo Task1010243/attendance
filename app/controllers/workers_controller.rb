@@ -37,6 +37,8 @@ class WorkersController < ApplicationController
 
   def destroy
     @worker = Worker.find(params[:id])
+    @paid_holiday = PaidHoliday.where(used_worker_id: params[:id])
+    @paid_holiday.destroy_all
     @worker.destroy
 
     redirect_to root_path, status: :see_other
