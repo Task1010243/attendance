@@ -3,13 +3,15 @@ h1 労働者詳細
 table
   tr
     th 名前
-    th 有給残日数
+    th 現在有給残日数
+    th 年度初め有休
     th 昨年度有休残日数
     th 今年度有休付与日数
     th 雇入れ日時
     th 勤続年数
   tr
     td = @worker.name + '(' + @worker.age.to_s + '歳)'
+    td = @worker.current_pto.to_s + '日'
     td = @worker.all_pto.to_s + '日'
     td = @worker.pre_pto.to_s + '日'
     td = @worker.pto.to_s + '日'
