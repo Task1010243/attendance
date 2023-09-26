@@ -4,6 +4,12 @@ class PaidHolidaysController < ApplicationController
     @worker = Worker.find(params['worker_id'])
   end
 
+  def current_month_index
+    current_month = Range.new(Time.zone.today.beginning_of_month, Time.zone.today.end_of_month)
+    @current_month_paid_holidays = PaidHoliday.where(first_period: current_month).order(:first_period)
+    @worker = Worker.all.order(:id).pluck(:id, :name)
+  end
+
   def new
     @paid_holiday = PaidHoliday.new
     @worker = Worker.find(params['worker_id'])
