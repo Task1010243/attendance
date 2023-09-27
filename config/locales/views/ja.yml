@@ -1,1 +1,8 @@
 ja:
+  simple_form:
+    labels:
+      name: '名前'
+      hire_date: '雇入れ日時'
+      birth_day: '誕生日'
+      pre_pto: '昨年度有休残日数'
+      pto: '今年度有給残日数'
