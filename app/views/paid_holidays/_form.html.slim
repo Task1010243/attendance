@@ -2,44 +2,49 @@
  div
   = form.hidden_field :used_worker_id, value: @worker.id
 
- div
+ .form-group.col-md-6
   = form.label '休暇開始日時'
-  = form.datetime_select :first_period
+  = form.datetime_select :first_period, class: 'form-control'
   - paid_holiday.errors.full_messages_for(:first_period).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '休暇終了日時'
-  = form.datetime_select :end_period
+  = form.datetime_select :end_period, class: 'form-control'
   - paid_holiday.errors.full_messages_for(:end_period).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '休暇種別'
-  = form.text_field :type
+  = form.select :type, ['有休',
+                        '代休',
+                        '半休',
+                        '特休',
+                        '時間休',
+                        '年末年始休'], class: 'form-control'
   - paid_holiday.errors.full_messages_for(:type).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '使用日数'
-  = form.text_field :used_days
+  = form.text_field :used_days, class: 'form-control'
   - paid_holiday.errors.full_messages_for(:used_days).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '代勤者１'
-  = form.text_field :substitute_worker1
+  = form.text_field :substitute_worker1, class: 'form-control'
   - paid_holiday.errors.full_messages_for(:substitute_worker1).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '代勤者２'
-  = form.text_field :substitute_worker2
+  = form.text_field :substitute_worker2, class: 'form-control'
   - paid_holiday.errors.full_messages_for(:substitute_worker2).each do |message|
     div
      = message
