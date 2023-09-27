@@ -1,5 +1,7 @@
 h1 当月休暇一覧
 
+= link_to '従業員一覧へ', workers_path, class: 'btn btn-lg btn-dark'
+
 table.table
   tr
     th 休暇者
@@ -16,5 +18,3 @@ table.table
       td = paid_holiday.used_days
       td = paid_holiday.substitute_worker1
       td = paid_holiday.substitute_worker2
-
-= link_to '従業員一覧へ', workers_path

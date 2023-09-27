@@ -2,9 +2,8 @@ section
   h1 労働者詳細
   p
     span
-      = link_to "編集", edit_worker_path(@worker)
-      '|
-      = link_to "削除", worker_path(@worker), data:{ turbo_method: :delete, turbo_confirm: "削除してもよろしいでしょうか？"}
+      = link_to "編集", edit_worker_path(@worker), class: 'btn btn-success'
+      = link_to "削除", worker_path(@worker), class:'btn btn-danger', data:{ turbo_method: :delete, turbo_confirm: "削除してもよろしいでしょうか？"}
   table.table
     tr
       th 名前
@@ -23,10 +22,12 @@ section
       td = @worker.hire_date.strftime("%Y年%m月%d日")
       td = @worker.seniority.to_s + '年'
 
+= link_to "従業員一覧へ", root_path, class: 'btn btn-lg btn-dark'
+
 section
   h1 休暇一覧
 
-  p = link_to '休暇登録', new_worker_paid_holiday_path(@worker.id)
+  = link_to '休暇登録', new_worker_paid_holiday_path(@worker.id), class: 'btn btn-secondary'
 
   table.table
     tr
@@ -42,5 +43,3 @@ section
         td = paid_holiday.used_days
         td = paid_holiday.substitute_worker1
         td = paid_holiday.substitute_worker2
-
-= link_to "従業員一覧へ", root_path
