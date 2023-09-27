@@ -4,14 +4,26 @@
 
  .form-group.col-md-6
   = form.label '休暇開始日時'
-  = form.datetime_select :first_period, class: 'form-control'
+  = form.datetime_select :first_period,
+                          end_year: Time.zone.now.next_year.year,
+                          default: Time.zone.now,
+                          start_hour: 4,
+                          end_hour: 17,
+                          minute_step: 30,
+                          class: 'form-control'
   - paid_holiday.errors.full_messages_for(:first_period).each do |message|
     div
      = message
 
  .form-group.col-md-6
   = form.label '休暇終了日時'
-  = form.datetime_select :end_period, class: 'form-control'
+  = form.datetime_select :end_period,
+                          end_year: Time.zone.now.next_year.year,
+                          default: Time.zone.now,
+                          start_hour: 4,
+                          end_hour: 17,
+                          minute_step: 30,
+                          class: 'form-control'
   - paid_holiday.errors.full_messages_for(:end_period).each do |message|
     div
      = message
