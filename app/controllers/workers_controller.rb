@@ -5,6 +5,7 @@ class WorkersController < ApplicationController
 
   def show
     @worker = Worker.find(params[:id]).decorate
+    @paid_holidays = PaidHoliday.where(used_worker_id: params[:id]).order(:first_period)
   end
 
   def new
