@@ -1,38 +1,38 @@
 = form_with model: worker do |form|
- div
+ .form-group.col-md-6
   = form.label '名前'
-  = form.text_field :name
+  = form.text_field :name, class: 'form-control'
   - worker.errors.full_messages_for(:name).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '雇入れ日時'
-  = form.date_field :hire_date
+  = form.date_field :hire_date, class: 'form-control'
   - worker.errors.full_messages_for(:hire_date).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '誕生日'
-  = form.date_field :birth_day
+  = form.date_field :birth_day, class: 'form-control'
   - worker.errors.full_messages_for(:birth_day).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '昨年度有休残日数'
-  = form.text_field :pre_pto
+  = form.text_field :pre_pto, class: 'form-control'
   - worker.errors.full_messages_for(:pre_pto).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.label '今年度有休残日数'
-  = form.text_field :pto
+  = form.text_field :pto, class: 'form-control'
   - worker.errors.full_messages_for(:pto).each do |message|
     div
      = message
 
- div
+ .form-group.col-md-6
   = form.submit
